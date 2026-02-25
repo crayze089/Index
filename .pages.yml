@@ -38,3 +38,26 @@ content:
       - name: description
         label: SEO Description
         type: text
+        content:
+  - name: homepage
+    label: Main Index Page
+    type: file
+    path: 'index.md'  # The single file where everything is saved
+    fields:
+      - name: title
+        label: Page Title
+        type: string
+      - name: posts
+        label: All Posts
+        type: object
+        list: true    # This is the "magic" that makes it a list
+        fields:
+          - name: post_title
+            label: Post Title
+            type: string
+          - name: content
+            label: Post Content
+            type: rich-text
+          - name: date
+            label: Date
+            type: date

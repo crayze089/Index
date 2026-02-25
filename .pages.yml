@@ -1,1 +1,40 @@
-index.html
+# 1. Media Configuration: Where your images and uploads go
+media:
+  input: public/images   # Folder in your repo where images are stored
+  output: /images        # Path used in your website's code
+
+# 2. Content Configuration: Define what you want to edit
+content:
+  # Example for a Blog or News section
+  - name: posts
+    label: Posts
+    type: collection
+    path: '_posts'       # Folder where your markdown files live
+    filename: '{year}-{month}-{day}-{fields.title}.md'
+    fields:
+      - name: title
+        label: Title
+        type: string
+      - name: date
+        label: Date
+        type: date
+      - name: draft
+        label: Draft
+        type: boolean
+        default: false
+      - name: body
+        label: Content
+        type: rich-text
+
+  # Example for editing a single file (like site settings)
+  - name: settings
+    label: Site Settings
+    type: file
+    path: 'config.json'  # Path to your global settings file
+    fields:
+      - name: title
+        label: Website Title
+        type: string
+      - name: description
+        label: SEO Description
+        type: text

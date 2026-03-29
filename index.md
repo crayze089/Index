@@ -11,27 +11,20 @@
 <body>
     <h1>Latest Posts</h1>
     <div id="posts-container">Loading posts...</div>
-
-    <script>
-        // Fetch the file managed by PagesCMS
-        fetch('./content.json')
-            .then(response => response.json())
-            .then(data => {
-                const container = document.getElementById('posts-container');
-                container.innerHTML = ''; // Clear loading text
-
-                // Loop through the posts defined in your .pages.yml
-                data.posts.forEach(post => {
-                    const postElement = document.createElement('div');
-                    postElement.className = 'post';
-                    postElement.innerHTML = `
-                        <h2>${post.title}</h2>
-                        <div>${post.body}</div>
-                    `;
-                    container.appendChild(postElement);
-                });
-            })
-            .catch(err => console.error('Error loading posts:', err));
-    </script>
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-analytics.js";
+  const firebaseConfig = {
+    apiKey: "AIzaSyC_dROH5xzzw8_QE5AlY1e9AvMOO6o33Go",
+    authDomain: "pixelwall-ee7a8.firebaseapp.com",
+    projectId: "pixelwall-ee7a8",
+    storageBucket: "pixelwall-ee7a8.firebasestorage.app",
+    messagingSenderId: "1000886378445",
+    appId: "1:1000886378445:web:f21acec1599ff5f5ef6e84",
+    measurementId: "G-6J2VMN22MQ"
+  };
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
 </body>
 </html>

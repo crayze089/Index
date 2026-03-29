@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My Blog</title>
+    <title>CRAYZE-Pixel Wall</title>
     <style>
         body { font-family: sans-serif; max-width: 800px; margin: auto; padding: 20px; }
-        .post { border-bottom: 1px solid #ccc; margin-bottom: 20px; padding-bottom: 10px; }
     </style>
 </head>
 <body>
